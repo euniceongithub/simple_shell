@@ -73,6 +73,6 @@ void infoFree(info_t *content, int all)
 		bfree((void **)content->bufferCommand);
 		if (content->check_file_des > 2)
 			close(content->check_file_des);
-		_putchar(CLEAR_BUFFER);
+		_putchar(BUF_ERASE);
 	}
-}}
+}

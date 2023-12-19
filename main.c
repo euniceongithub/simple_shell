@@ -12,10 +12,6 @@ int main(int ac, char **av)
 	info_t content[] = { INFO_INIT };
 	int file_des = 2;
 
-	asm ("mov %1, %0\n\t"
-		"add $3, %0"
-		: "=x" (file_des)
-		: "x" (file_des));
 	if (ac == 2)
 	{
 		file_des = open(av[1], O_RDONLY);

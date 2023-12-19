@@ -10,7 +10,7 @@ char **get_environ(info_t *content)
 {
 	if (environ != content->environ || content->env_changed)
 	{
-		ffree(&content->environ);
+		ffree(content->environ);
 		content->environ = listToStrings(content->env);
 		content->env_changed = 0;
 	}

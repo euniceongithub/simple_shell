@@ -77,12 +77,15 @@ ssize_t fetchContent(info_t *content)
 		}
 		i = j + 1;
 		if (i >= len)
-		{i = j + 1;
-		if (i >= len)
 		{
-			i = len = 0;
-			content->bufferCommandType = NORM_COMMAND;
+			i = j + 1;
+			if (i >= len)
+			{
+				i = len = 0;
+				content->bufferCommandType = NORM_COMMAND;
+			}
 		}
+
 		*buf_p = p;
 		return (stringLen(p));
 	}

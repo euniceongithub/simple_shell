@@ -25,7 +25,7 @@ int strToInt(char *s)
 	{
 		if (*s >= '0' && *s <= '9')
 		{
-			if (soln > (IMAX / 10) || (soln == (IMAX / 10) && (*s - '0') > (IMAX % 10)))
+			if (soln > (INT_MAX / 10) || (soln == (INT_MAX / 10) && (*s - '0') > (INT_MAX % 10)))
 				return (-1);
 			soln = soln * 10 + (*s - '0');
 		}
@@ -67,7 +67,8 @@ int decimalPrint(int input, int file_des)
 	int i, tally;
 	unsigned int _abs_, presentVal;
 
-	i, tally = 0;
+	i = 0;
+	tally = 0;;
 
 	if (file_des == STDERR_FILENO)
 		__putchar = custom_putchar;
@@ -104,7 +105,7 @@ int decimalPrint(int input, int file_des)
  */
 char *func_conversion(long int num, int base, int prec_checks)
 {
-	tatic char *ptr_arr;
+	static char *ptr_arr;
 	static char buffer[50];
 	char mag;
 	char *ptr_char;

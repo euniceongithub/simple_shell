@@ -10,6 +10,7 @@
 #include <errno.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 #include <fcntl.h>
 #include <signal.h>
 #include <stddef.h>
@@ -158,8 +159,8 @@ char *func_conversion(long int, int, int);
 void elimComent(char *);
 
 int close_shell(info_t *);
-int _mycd(info_t *);
-int _myhelp(info_t *);
+int ch_dir(info_t *);
+int help_call(info_t *);
 
 int sh_history(info_t *);
 int ama_alias(info_t *);
